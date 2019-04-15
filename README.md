@@ -7,11 +7,11 @@ sedsed can debug, indent, tokenize and HTMLize your sed scripts.
 
 In debug mode it reads your script and add extra commands to it. When executed you can see the data flow between the commands, revealing all the magic sed does on its internal buffers.
 
-In indent mode your script is reformatted with standard spacing.
+In [indent](#indent) mode your script is reformatted with standard spacing.
 
-In tokenize mode you can see the elements of every command you use.
+In [tokenize](#debug) mode you can see the elements of every command you use.
 
-In HTMLize mode your script is converted to a beautiful colored HTML file, with all the commands and parameters identified for your viewing pleasure.
+In [HTMLize](#htmlize) mode your script is converted to a beautiful colored HTML file, with all the commands and parameters identified for your viewing pleasure.
 
 With sedsed you can master ANY sed script. No more secrets, no more hidden buffers.
 
@@ -56,6 +56,7 @@ prompt$ sedsed --htmlize -f email-linker.sed > email-linker.sed.html
 Here is the resulting HTML file:
 
 ![alt text](https://github.com/rbmiao/python_sedsed/blob/master/htmlize.png)
+
 Visit the sed Website for examples of more than 60 sed scripts HTMLized.
 
 ## USAGE

@@ -18,7 +18,7 @@ With sedsed you can master ANY sed script. No more secrets, no more hidden buffe
 ## SCREENSHOTS
 
 ####Quick sample
-Output should look like: 
+
 ![alt text](https://github.com/rbmiao/python_sedsed/blob/master/quicksample.png)
     The -d option turns debug ON.
     The --hide=hold options hides the HOLD SPACE buffer contents, because it is always empty on this example.
@@ -28,13 +28,14 @@ Output should look like:
     The $ sign at the end of PATT: lines represent the end of the buffer.
 
 ## Indent
-Output should look like: 
+
+
 ![alt text](https://github.com/rbmiao/python_sedsed/blob/master/indent.png)
     The -f option reads the sed script from a file (just like in sed).
     The --indent option reformats complicated sed scripts into beautiful human-friendly scripts.
 
 ## Debug
-Output should look like: 
+ 
 ![alt text](https://github.com/rbmiao/python_sedsed/blob/master/debug.png)
     The -d option turns debug ON.
     The HOLD: lines shows the HOLD SPACE buffer contents.
@@ -53,7 +54,7 @@ h;s|.*|<link>&</link>|;x;/@/{s/@.*/'s email:/;G;}
 prompt$ sedsed --htmlize -f email-linker.sed > email-linker.sed.html
 ```
 Here is the resulting HTML file:
-Output should look like: 
+
 ![alt text](https://github.com/rbmiao/python_sedsed/blob/master/htmlize.png)
 Visit the sed Website for examples of more than 60 sed scripts HTMLized.
 
@@ -103,6 +104,7 @@ echo "aa='abc" | sedsed -d -f config.sed
 
 echo 4 4 + p | sedsed -d -f dc.sed
 ```
-Output should look like: 
+
+
 ![alt text](https://github.com/rbmiao/python_sedsed/blob/master/dc.png)
 

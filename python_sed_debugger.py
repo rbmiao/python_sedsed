@@ -1,14 +1,14 @@
 #! /usr/bin/env python
 # sedsed
 # 20190401 <rbmiao@gmail.com> ** debut
-# ChangeLog: see README file at http://sedsed.sf.net
+
 
 import sys, re, os, getopt, string
 
 # program self data
 myname = 'sedsed'
 myversion = 0.5
-myhome = 'http://sedsed.sf.net'
+myhome = 'http://www.rbmiao.com'
 
 # default config
 color = 1                     # colored output? (it's nice)
@@ -20,23 +20,28 @@ action = 'indent'             # default action
 #-------------------------------------------------------------------------------
 
 def error(msg):
-	print 'ERROR:',msg ; sys.exit(1)
+	print 'ERROR:',msg ; 
+	sys.exit(1)
 
 # OS/system functions
 def readFile(file):            # remove \n$
 	if not os.path.isfile(file): error('file not found: %s'%file)
 	f = open(file); txt = f.read(); f.close
-	txt = re.sub('\n$','',txt) ; return string.split(txt, '\n')
+	txt = re.sub('\n$','',txt) ; 
+	return string.split(txt, '\n')
+
 def writeFile(file, list=[]):
 	if list:
 		for i in range(len(list)): # ensuring line break
 			list[i] = string.rstrip(list[i])+'\n'
 	f = open(file,'w'); f.writelines(list); f.close()
+
 def mkTmpFile(list=[]):
 	from time import time
 	file = '/tmp/sedsed.%s'%str(time())
 	writeFile(file, list)
 	return file
+
 def runCommand(cmd): # Returns a (#exit_code, program_output[]) tuple
 	list = [] ; fd = os.popen(cmd)
 	for line in fd.readlines():
